@@ -1,0 +1,209 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(218, 218, 218);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.sidebar {
+  background-color: #000000;
+  border-right: solid 1px #ffffff54;
+}
+
+.sidebar-icon {
+  width: auto;
+  margin-bottom: 3px;
+}
+
+.ContextMenuContent {
+  min-width: 220px;
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 5px;
+  box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+}
+
+.ContextMenuItem {
+  font-size: 13px;
+  line-height: 1;
+  color: black;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  padding: 0 5px;
+  position: relative;
+  padding-left: 25px;
+  user-select: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.ContextMenuItem[data-highlighted] {
+  background-color: #212529;
+  color: white;
+}
+
+
+#ContextMenuItem-edit[data-highlighted] {
+  color: white;
+}
+
+#ContextMenuItem-delete[data-highlighted] {
+  color: white;
+}
+
+.ContextMenuSeparator {
+  height: 1px;
+  background-color: #bebebe;
+  margin: 5px;
+}
+
+.Delete {
+  margin-left: auto;
+  padding-left: 20px;
+  color: #424242;
+}
+
+[data-highlighted]>.Delete {
+  color: white;
+}
+
+.Edit {
+  margin-left: auto;
+  padding-left: 20px;
+  color: #424242;
+}
+
+[data-highlighted]>.Edit {
+  color: white;
+}
+
+/*Alert Dialog*/
+
+.AlertDialogOverlay {
+  background-color: var(--black-a9);
+  position: fixed;
+  inset: 0;
+  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.AlertDialogContent {
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 500px;
+  max-height: 85vh;
+  padding: 25px;
+  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.AlertDialogContent:focus {
+  outline: none;
+}
+
+.AlertDialogTitle {
+  margin: 0;
+  color: var(--mauve-12);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.AlertDialogDescription {
+  margin-bottom: 20px;
+  color: var(--mauve-11);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.Button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 500;
+  height: 35px;
+}
+
+.Button.violet {
+  background-color: white;
+  color: var(--violet-11);
+  box-shadow: 0 2px 10px var(--black-a7);
+}
+
+.Button.violet:hover {
+  background-color: var(--mauve-3);
+}
+
+.Button.violet:focus {
+  box-shadow: 0 0 0 2px black;
+}
+
+.Button.red {
+  background-color: var(--red-4);
+  color: var(--red-11);
+}
+
+.Button.red:hover {
+  background-color: var(--red-5);
+}
+
+.Button.red:focus {
+  box-shadow: 0 0 0 2px var(--red-7);
+}
+
+.Button.mauve {
+  background-color: var(--mauve-4);
+  color: var(--mauve-11);
+}
+
+.Button.mauve:hover {
+  background-color: var(--mauve-5);
+}
+
+.Button.mauve:focus {
+  box-shadow: 0 0 0 2px var(--mauve-7);
+}
+
+@keyframes overlayShow {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

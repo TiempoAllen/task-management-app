@@ -1,0 +1,310 @@
+.app {
+  border: solid 1px #e6e6e6;
+  border-radius: 10px;
+  height: 500px;
+  background-color: rgb(53, 53, 53);
+  /* padding: 20px; */
+}
+
+.app .home .header {
+  border-bottom: solid 1px #ffffff54;
+}
+
+.app .home {
+  height: 100%;
+  position: relative;
+  padding: 20px;
+  background-color: black;
+  border-radius: 0 10px 10px 0;
+  min-width: 550px;
+}
+
+.app .home p {
+  margin-bottom: 0;
+}
+
+.app .home ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.app .home .tasks {
+  background-color: #212529;
+  color: white;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 0 5px 5px 0;
+}
+
+.home h1 {
+  margin: 0 0 10px 0;
+}
+
+.add-button:hover {
+  background-color: #2c3033;
+}
+
+form.create-note {
+  position: relative;
+  width: 480px;
+  margin: 20px auto 20px auto;
+  background: #fff;
+  padding: 5px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+
+form.create-note input,
+form.create-note textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 4px;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
+}
+
+form.create-note button {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: #2ce8df;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+}
+
+.DialogOverlay {
+  background-color: var(--black-a9);
+  position: fixed;
+  inset: 0;
+  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.DialogContent {
+  background-color: #1E1E1E;
+  border-radius: 6px;
+  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  min-height: 200px;
+  padding: 25px;
+  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  color: white;
+}
+
+.DialogContent:focus {
+  outline: none;
+}
+
+.DialogTitle {
+  margin: 0;
+  font-weight: 500;
+  color: var(--mauve-12);
+  font-size: 17px;
+}
+
+.DialogDescription {
+  margin: 10px 0 20px;
+  color: var(--mauve-11);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.Button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 500;
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+.Button.violet {
+  background-color: white;
+  color: var(--violet-11);
+  box-shadow: 0 2px 10px var(--black-a7);
+}
+
+.Button.violet:hover {
+  background-color: var(--mauve-3);
+}
+
+.Button.violet:focus {
+  box-shadow: 0 0 0 2px black;
+}
+
+.dialog-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: 15px;
+}
+
+#cancel-button {
+  color: #8F8F8F;
+  background-color: #3B3E45;
+}
+
+.Button.green {
+  background-color: #1A62D7;
+  color: white;
+  width: auto;
+  margin: 0 0 0 10px;
+}
+
+.Button.green:hover {
+  background-color: #84a0ce;
+}
+
+
+.IconButton {
+  font-family: inherit;
+  border-radius: 100%;
+  height: 25px;
+  width: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--violet-11);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.IconButton:hover {
+  background-color: var(--violet-4);
+}
+
+.IconButton:focus {
+  box-shadow: 0 0 0 2px var(--violet-7);
+}
+
+.Fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: start;
+  justify-content: start;
+  margin-bottom: 15px;
+}
+
+.Label {
+  font-size: 15px;
+  color: black;
+  width: 150px;
+}
+
+.dialog-input {
+  width: 100%;
+}
+
+.Input,
+.Textarea {
+  width: 100%;
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: solid 1px #424242;
+  padding: 0 10px;
+  font-size: 15px;
+  line-height: 1;
+  color: white;
+  box-shadow: 0 0 0 1px var(--violet-7);
+  background-color: #ffffff;
+  padding: 5px 8px;
+  height: 60px;
+}
+
+.Textarea {
+  resize: none;
+  padding: 10px;
+}
+
+.Input:focus {
+  box-shadow: 0 0 0 2px var(--violet-8);
+}
+
+@import '@radix-ui/colors/black-alpha.css';
+@import '@radix-ui/colors/mauve.css';
+@import '@radix-ui/colors/violet.css';
+
+.ScrollAreaRoot {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px var(--black-a7);
+  --scrollbar-size: 10px;
+}
+
+.ScrollAreaViewport {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.ScrollAreaScrollbar {
+  display: flex;
+  /* ensures no selection */
+  user-select: none;
+  /* disable browser handling of all panning and zooming gestures on touch devices */
+  touch-action: none;
+  padding: 2px;
+  background: var(--black-a6);
+  transition: background 160ms ease-out;
+}
+
+.ScrollAreaScrollbar:hover {
+  background: var(--black-a8);
+}
+
+.ScrollAreaScrollbar[data-orientation='vertical'] {
+  width: var(--scrollbar-size);
+}
+
+.ScrollAreaScrollbar[data-orientation='horizontal'] {
+  flex-direction: column;
+  height: var(--scrollbar-size);
+}
+
+.ScrollAreaThumb {
+  flex: 1;
+  background: var(--mauve-10);
+  border-radius: var(--scrollbar-size);
+  position: relative;
+}
+
+/* increase target size for touch devices https://www.w3.org/WAI/WCAG21/Understanding/target-size.html */
+.ScrollAreaThumb::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.ScrollAreaCorner {
+  background: var(--black-a8);
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import * as AlertDialog from "@radix-ui/react-alert-dialog";
+import "../App.css";
 
 const AlertDialogPortal = ({ handleDeleteTask, handleCloseDialog, task }) => {
   return (
@@ -16,19 +17,24 @@ const AlertDialogPortal = ({ handleDeleteTask, handleCloseDialog, task }) => {
           </AlertDialog.Description>
           <div style={{ display: "flex", gap: 25, justifyContent: "flex-end" }}>
             <AlertDialog.Cancel asChild>
-              <button className="Button mauve" onClick={handleCloseDialog}>
+              <button
+                className="Button mauve"
+                onClick={handleCloseDialog}
+                style={{ backgroundColor: "#212529", color: "white" }}
+              >
                 Cancel
               </button>
             </AlertDialog.Cancel>
             <AlertDialog.Action asChild>
               <button
                 className="Button red"
+                style={{ backgroundColor: "red", color: "white" }}
                 onClick={() => {
                   handleDeleteTask(task.task_id);
                   handleCloseDialog();
                 }}
               >
-                Yes, delete account
+                Yes, delete task
               </button>
             </AlertDialog.Action>
           </div>

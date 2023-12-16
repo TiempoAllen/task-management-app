@@ -6,7 +6,13 @@ import * as ContextMenu from "@radix-ui/react-context-menu";
 import ContextMenuPortal from "./ContextMenuPortal";
 import axios from "axios";
 
-const Tasks = ({ handleDeleteTask, tasks, setTasks }) => {
+const Tasks = ({
+  handleDeleteTask,
+  tasks,
+  setTasks,
+  status,
+  handleEditTask,
+}) => {
   const handleToggleComplete = async (task_id) => {
     try {
       const currentTask = tasks.find((task) => task.task_id === task_id);
@@ -38,7 +44,7 @@ const Tasks = ({ handleDeleteTask, tasks, setTasks }) => {
         <ScrollArea.Viewport className="ScrollAreaViewport">
           <ul>
             {tasks
-              .filter((task) => task.status === "pending")
+              .filter((task) => task.status === `${status}`)
               .map((task) => (
                 <ContextMenu.Root key={task.task_id}>
                   <ContextMenu.Trigger>
@@ -65,6 +71,7 @@ const Tasks = ({ handleDeleteTask, tasks, setTasks }) => {
                   </ContextMenu.Trigger>
                   <ContextMenuPortal
                     handleDeleteTask={handleDeleteTask}
+                    handleEditTask={handleEditTask}
                     task={task}
                   />
                 </ContextMenu.Root>

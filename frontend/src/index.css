@@ -160,29 +160,29 @@ code {
   box-shadow: 0 0 0 2px black;
 }
 
-.Button.red {
-  background-color: var(--red-4);
-  color: var(--red-11);
+.Button .red {
+  background-color: red;
+  color: white;
 }
 
-.Button.red:hover {
+.Button .red:hover {
   background-color: var(--red-5);
 }
 
-.Button.red:focus {
+.Button .red:focus {
   box-shadow: 0 0 0 2px var(--red-7);
 }
 
-.Button.mauve {
+.Button .mauve {
   background-color: var(--mauve-4);
   color: var(--mauve-11);
 }
 
-.Button.mauve:hover {
+.Button .mauve:hover {
   background-color: var(--mauve-5);
 }
 
-.Button.mauve:focus {
+.Button .mauve:focus {
   box-shadow: 0 0 0 2px var(--mauve-7);
 }
 

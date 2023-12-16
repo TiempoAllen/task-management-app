@@ -58,11 +58,19 @@ def get_tasks():
 def update_task(task_id):
     try:
         data = request.json
+
+        # Ensure that 'status' is included in the data
+        if 'status' not in data:
+            raise ValueError("'status' is missing in the request data")
+
         query = "UPDATE tasks SET title=%s, description=%s, due_date=%s, status=%s WHERE task_id=%s"
-        cursor.execute(query, (data['title'], data['description'], data['due_date'], data['status'], task_id))
+        cursor.execute(query, (data.get('title'), data.get('description'), data.get('due_date'), data['status'], task_id))
         db.commit()
+
         return jsonify({"message": "Task updated successfully"})
     except Exception as e:
+        # Log the error details
+        print(f"Error updating task: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
 # Mark a task as completed
